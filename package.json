@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ayushnanda21/S3-Buckets-AWS#readme",
   "dependencies": {
+    "ab2b64": "^0.9.1",
     "aws-sdk": "^2.1101.0"
   }
 }
