@@ -1,0 +1,22 @@
+{
+  "name": "s3-buckets-aws",
+  "version": "1.0.0",
+  "description": "aws-sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushnanda21/S3-Buckets-AWS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayushnanda21/S3-Buckets-AWS/issues"
+  },
+  "homepage": "https://github.com/ayushnanda21/S3-Buckets-AWS#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1101.0"
+  }
+}
