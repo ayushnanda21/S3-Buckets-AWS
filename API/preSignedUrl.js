@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
 	try {
 		const params = { Bucket: process.env.bucketName, Key: fileName };
-		const url = await s3.getSignedUrl('putObject', params);
+		const url = await s3.getSignedUrl('putObject', params).promise();
 		return {
 			statusCode: 200,
 			headers: {
