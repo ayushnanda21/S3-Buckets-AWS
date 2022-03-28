@@ -42,7 +42,7 @@ document.getElementById('multipartInputBtn').addEventListener('click', async()=>
                 uploadId : uploadId
             });
 
-            const preSignedUrl = getSignedUrlRes.data.preSignedUrl;
+            let preSignedUrl = getSignedUrlRes.data.preSignedUrl;
             //console.log(`${uploadCount} : ${getSignedUrlRes.data.preSignedUrl}`);
         
             let uploadChunk = await fetch(preSignedUrl,{
@@ -59,13 +59,18 @@ document.getElementById('multipartInputBtn').addEventListener('click', async()=>
 
             let uploadPartDetails ={
                 Etag: EtagHeader,
-                partNumber: uploadCount
+                PartNumber: uploadCount
             }
             multiUploadArray.push(uploadPartDetails);
         }
           
         console.log(multiUploadArray)
-       
+        const completeUpload = await axios.post(`${url}/completeUpload`,{
+            fileName : fileName,
+            parts : multiUploadArray,
+            uploadId: uploadId
+        });
+        console.log(completeUpload);
     } catch(err){
         console.log(err);
     }
